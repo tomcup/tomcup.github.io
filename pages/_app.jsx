@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css"
 
 export default function MyApp({ Component, pageProps }) {
     useEffect(()=>{
-        typeof document !== undefined ? require("bootstrap/dist/js/bootstrap") : null;
+        typeof document !== undefined ? require("bootstrap") : null;
     });
     return (
         <>
