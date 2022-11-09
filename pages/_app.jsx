@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.css"
 
 export default function MyApp({ Component, pageProps }) {
@@ -11,7 +10,7 @@ export default function MyApp({ Component, pageProps }) {
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    <Image src={"/gooddog.png"} alt="Tomcup" width="30" height="35" />
+                    <image src="/gooddog.png" alt="Tomcup" width="30" height="35" />
                     Navbar
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
