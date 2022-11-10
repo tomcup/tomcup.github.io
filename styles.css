@@ -1,0 +1,14 @@
+.svg-center {
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif;;;; */;
+    font-size: 2.25rem;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+}

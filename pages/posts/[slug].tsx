@@ -1,29 +1,10 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import React from 'react'
+import  { useEffect } from 'react'
 
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/MarkdownToHtml'
-
-import Head from "next/head"
-
-type Author = {
-    name: string
-    picture: string
-}
-
-type PostType = {
-    slug: string
-    title: string
-    date: string
-    coverImage: string
-    author: Author
-    excerpt: string
-    ogImage: {
-      url: string
-    }
-    content: string
-  }
+import { PostType } from '..'
 
 type Props = {
     post: PostType
@@ -31,17 +12,29 @@ type Props = {
     preview?: boolean
   }
 
-export default function Post({ post, morePosts, preview }: Props){
+export default function Post({ post }: Props){
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  useEffect(()=>{document.title = post.title + " | Tomcup Blog"}, []);
   return (
     <>
-    <Head>
-      <title>Tomcup Blog</title>
-    </Head>
-    
+    <main className='container'>
+      {router.isFallback ? (
+        <>
+        <h1>Loading...</h1>
+        </>
+        ) : (
+        <>
+          <article>
+            <h1 id='title'>{post.title}</h1>
+            <p className='blog-post-meta'>{post.date} by {post.author.name}</p>
+            <div dangerouslySetInnerHTML={{__html:post.content}}></div>
+          </article>
+        </>
+        )}
+    </main>
     </>
   )
 }
