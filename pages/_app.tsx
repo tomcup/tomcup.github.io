@@ -1,8 +1,9 @@
 import { useEffect } from "react"
+import { AppProps } from "next/app";
 import "bootstrap/dist/css/bootstrap.css"
 import React from "react";
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
     useEffect(()=>{require("bootstrap/dist/js/bootstrap")}, []);
     return (
         <>
