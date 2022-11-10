@@ -29,7 +29,7 @@ export default function Post({ post }: Props){
         <>
           <article>
             <h1 id='title'>{post.title}</h1>
-            <p className='blog-post-meta'>{post.date} by {post.author.name}</p>
+            <p className='blog-post-meta'>{post.date.replace(/T/, ' ').replace(/\..+/, '')} by {post.author.name}</p>
             <div dangerouslySetInnerHTML={{__html:post.content}}></div>
           </article>
         </>

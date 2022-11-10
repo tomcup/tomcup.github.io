@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Link from "next/link"
 import { getAllPosts } from "../lib/api"
 
@@ -24,6 +25,9 @@ type Props = {
 export default function Index({ allPosts }: Props) {
   return (
     <>
+    <Head>
+      <title>Tomcup Blog</title>
+    </Head>
     <main className="container">
       <div className="p-4 p-md-5 mb-4 rounded text-bg-dark">
         <div className="col-md-6 px-0">
@@ -70,6 +74,7 @@ export default function Index({ allPosts }: Props) {
           </div>
         </div>
       </div>
+      <h3 className="pb-4 mb-4 fst-italic border-bottom">Article List</h3>
       {allPosts.map((post)=>(
         /** key 是必要的，否则React会报警告，好像这里Bootstrap对 col-md-6 mb-md-0 p-md-4 布局用了<li>标签 */
         <div className="row g-0 rounded overflow-hidden mb-2 shadow-sm position-relative" key={post.title}>
@@ -81,7 +86,7 @@ export default function Index({ allPosts }: Props) {
           </div>
           <div className="col p-4 d-flex flex-column position-static">
             <h5 className="mb-0">{post.title}</h5>
-            <div className="mb-1 text-muted">{post.date}</div>
+            <div className="mb-1 text-muted">{post.date.replace(/T/, ' ').replace(/\..+/, '')}</div>
             <p className="mb-auto">{post.excerpt}</p>
             <Link href="/posts/[slug]" as={`/posts/${post.slug}/#title`} className="stretched-link">Continue reading</Link>
           </div>
