@@ -87,7 +87,7 @@ export default function Index({ allPosts }: Props) {
           <div className="col p-4 d-flex flex-column position-static">
             <h5 className="mb-0">{post.title}</h5>
             <div className="mb-1 text-muted">{post.date.replace(/T/, ' ').replace(/\..+/, '')}</div>
-            <p className="mb-auto">{post.excerpt}</p>
+            <p className="mb-3">{post.excerpt}</p>
             <Link href="/posts/[slug]" as={`/posts/${post.slug}/#title`} className="stretched-link">Continue reading</Link>
           </div>
         </div>
