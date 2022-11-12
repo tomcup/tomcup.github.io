@@ -13,15 +13,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <div className="container">
-            <header className="blog-header lh-1 py-3 mb-4 shadow-sm position-relative">
+        <header className="blog-header lh-1 py-3 mb-4 shadow-sm position-relative">
                 <div className="flex-nowrap justify-content-between align-items-center">
                     <div className="text-center">
                         <a className="blog-header-logo text-dark blog-header-logo stretched-link" href="/">Tomcup</a>
                     </div>
                 </div>
             </header>
-        </div>
         <Component sytle="position: static;" {...pageProps} />
         <div className="container">
             <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
