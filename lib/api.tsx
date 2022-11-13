@@ -46,3 +46,21 @@ export function getAllPosts(fields: string[] = []) {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
 }
+
+export type PostType = {
+  slug: string
+  title: string
+  date: string
+  coverImage: string
+  author: {
+    name: string
+    picture: string
+  }
+  excerpt: string
+  ogImage: {
+    url: string
+    desc: string
+  }
+  content: string
+}
+

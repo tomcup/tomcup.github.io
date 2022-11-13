@@ -1,22 +1,6 @@
 import Head from "next/head"
 import Link from "next/link"
-import { getAllPosts } from "../lib/api"
-
-export type PostType = {
-  slug: string
-  title: string
-  date: string
-  coverImage: string
-  author: {
-    name: string
-    picture: string
-  }
-  excerpt: string
-  ogImage: {
-    url: string
-  }
-  content: string
-}
+import { getAllPosts, PostType } from "../lib/api"
 
 type Props = {
   allPosts: PostType[]
@@ -90,10 +74,10 @@ export default function Index({ allPosts }: Props) {
         <div className="col-md-6">
           <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col p-4 d-flex flex-column position-static">
-              <strong className="d-inline-block mb-2 text-primary">World</strong>
-              <h3 className="mb-0">Featured post</h3>
-              <div className="mb-1 text-muted">Nov 12</div>
-              <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <strong className="d-inline-block mb-2 text-primary">Code</strong>
+              <h3 className="mb-0">Nextjs 建站过程</h3>
+              <div className="mb-1 text-muted">Nov 11, 2022</div>
+              <p className="card-text mb-auto">对于此网站的建站过程的介绍，这其中包涵着许多问题，在这里进行总结，以供参考和借鉴，也是一种个人笔记</p>
               <a href="#" className="stretched-link">Continue reading</a>
             </div>
             <div className="col-auto d-none d-lg-block">
@@ -128,19 +112,19 @@ export default function Index({ allPosts }: Props) {
       <h3 className="pb-4 mb-4 fst-italic border-bottom">Article List</h3>
       <div className="row mb-2">
         {allPosts.map((post)=>(
-        // key 是必要的，否则React会报警告，好像这里Bootstrap对 col-md-6 mb-md-0 p-md-4 布局用了<li>标签
+        // div 标签中的 key 是必要的，否则React会报警告，好像这里的map布局使用了<li>标签
         <div className="row g-0 rounded overflow-hidden mb-2 shadow-sm position-relative" key={post.title}>
-          <div className="col-4 d-none d-lg-block">
-            <svg className="bd-placeholder-img" width="100%" height="100%">
-              <image xlinkHref={post.ogImage.url} className="w-100" />
-              <text className="svg-center" x="50%" y="80%" fill="black">Thumbnail</text>
-            </svg>
+          {/* div 标签中 className 属性中的 position-relative 是必要的，为子标签提供父级环境 */}
+          <div className="col-4 d-none d-lg-block position-relative">
+            {/* img 标签中的 style 属性是必要的，其使得该图片相对于父级居中 */}
+            <img src={post.ogImage.url} alt="ogImage" className="w-100 position-absolute top-50 start-50 translate-middle"></img>
+            <p className="position-absolute bottom-0 start-50 translate-middle-x">{post.ogImage.desc}</p>
           </div>
           <div className="col p-4 d-flex flex-column position-static">
-            <h5 className="mb-0">{post.title}</h5>
-            <div className="mb-1 text-muted">{post.date.replace(/T/, ' ').replace(/\..+/, '')}</div>
+            <h4 className="mb-0">{post.title}</h4>
+            <div className="mb-1 text-muted">{post.date.replace(/T/, ' ').replace(/\s.+/, '')}</div>
             <p className="mb-3">{post.excerpt}</p>
-            <Link href="/posts/[slug]" as={`/posts/${post.slug}/#title`} className="stretched-link">Continue reading</Link>
+            <Link href="/posts/[slug]" as={`/posts/${post.slug}/#`} className="stretched-link">Continue reading</Link>
           </div>
         </div>
       ))}

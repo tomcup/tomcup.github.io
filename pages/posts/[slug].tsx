@@ -2,9 +2,8 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import  { useEffect } from 'react'
 
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getAllPosts, PostType } from '../../lib/api'
 import markdownToHtml from '../../lib/MarkdownToHtml'
-import { PostType } from '..'
 
 type Props = {
     post: PostType
