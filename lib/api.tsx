@@ -6,24 +6,20 @@ import matter from 'gray-matter'
 const postsDirectory = join(process.cwd(), POST_PATH)
 
 // 2022.11.16
-此处故意产生错误
-详见下文注释
-// 该函数技术滞后，效率极其低下，必须改进
+// 此处故意产生错误
+// 详见下文注释
 // 问题：访问 /posts/.obsidian/11.10 时出错：
 // Error: The provided `as` value (/posts/.obsidian/11.10) is incompatible with the `href` value (/posts/[slug]).
-export function getPostSlugs(dir: string = postsDirectory, result: string[] = []) {
-  // console.log(fs.readdirSync(postsDirectory))
-  fs.readdirSync(dir, {encoding: "utf-8", withFileTypes: true}).forEach((vaule: fs.Dirent) => {
-    console.log(dir.replace(postsDirectory+'\\', '').replace(postsDirectory, ''))
-    console.log(vaule.name)
-    if (vaule.isDirectory()) getPostSlugs(join(dir, vaule.name), result)
-    else if (/\.md$/.test(vaule.name)) result.push(join(dir.replace(postsDirectory+'\\', '').replace(postsDirectory, ''), vaule.name).replaceAll('\\', '/'))
+export function getPostSlugs(dir: string = "", result: string[] = []) {
+  fs.readdirSync(join(postsDirectory, dir), {encoding: "utf-8", withFileTypes: true}).forEach((vaule: fs.Dirent) => {
+    if (vaule.isDirectory()) getPostSlugs(vaule.name, result)
+    else if (/\.md$/.test(vaule.name)) result.push(join(dir, vaule.name).replaceAll('\\', '/'))
   })
   return result
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '').replace(postsDirectory.replaceAll("\\", '/'), '')
+  const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
@@ -48,17 +44,11 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
   })
 
-  // console.log(items)
-
   return items
 }
 
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs()
-  console.log(slugs)
-  slugs.map((value: string) => {
-    return value.replaceAll("\\", '/')
-  })
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
