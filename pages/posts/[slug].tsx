@@ -4,7 +4,6 @@ import  { useEffect } from 'react'
 
 import { getPostBySlug, getAllPosts, PostType } from '../../lib/api'
 import markdownToHtml from '../../lib/MarkdownToHtml'
-import { join } from 'path'
 import { POST_PATH } from '../../lib/constants'
 
 type Props = {
@@ -45,7 +44,6 @@ type Params = {
     slug: string
   }
 }
-
 
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
