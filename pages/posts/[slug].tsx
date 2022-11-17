@@ -4,6 +4,8 @@ import  { useEffect } from 'react'
 
 import { getPostBySlug, getAllPosts, PostType } from '../../lib/api'
 import markdownToHtml from '../../lib/MarkdownToHtml'
+import { join } from 'path'
+import { POST_PATH } from '../../lib/constants'
 
 type Props = {
     post: PostType
@@ -44,6 +46,7 @@ type Params = {
   }
 }
 
+
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
     'title',
@@ -53,7 +56,7 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'ogImage',
     'coverImage',
-  ])
+  ], POST_PATH)
   const content = await markdownToHtml(post.content || '')
 
   return {
@@ -67,7 +70,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(['slug'], POST_PATH)
 
   return {
     paths: posts.map((post) => {

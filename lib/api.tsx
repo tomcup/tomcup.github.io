@@ -1,26 +1,17 @@
 import fs from 'fs'
 import { join } from 'path'
-import { POST_PATH } from './constants'
 import matter from 'gray-matter'
 
-const postsDirectory = join(process.cwd(), POST_PATH)
-
-// 2022.11.16
-// 此处故意产生错误
-// 详见下文注释
-// 问题：访问 /posts/.obsidian/11.10 时出错：
-// Error: The provided `as` value (/posts/.obsidian/11.10) is incompatible with the `href` value (/posts/[slug]).
-export function getPostSlugs(dir: string = "", result: string[] = []) {
-  fs.readdirSync(join(postsDirectory, dir), {encoding: "utf-8", withFileTypes: true}).forEach((vaule: fs.Dirent) => {
-    if (vaule.isDirectory()) getPostSlugs(vaule.name, result)
-    else if (/\.md$/.test(vaule.name)) result.push(join(dir, vaule.name).replaceAll('\\', '/'))
+export function getPostSlugs(dir: string, result: string[] = []) {
+  fs.readdirSync(join(process.cwd(), dir), {encoding: "utf-8", withFileTypes: true}).forEach((vaule: fs.Dirent) => {
+    if (vaule.isFile() && /\.md$/.test(vaule.name)) result.push(vaule.name.replaceAll('\\', '/'))
   })
   return result
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getPostBySlug(slug: string, fields: string[] = [], dir: string) {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
+  const fullPath = join(process.cwd(), dir, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
@@ -47,10 +38,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs()
+export function getAllPosts(fields: string[] = [], dir: string) {
+  const slugs = getPostSlugs(dir)
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
+    .map((slug) => getPostBySlug(slug, fields, dir))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts

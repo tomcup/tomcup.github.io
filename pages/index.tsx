@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import { getAllPosts, PostType } from "../lib/api"
+import { POST_PATH } from "../lib/constants"
 
 type Props = {
   allPosts: PostType[]
@@ -144,7 +145,7 @@ export const getStaticProps = async () => {
     'coverImage',
     'excerpt',
     'ogImage'
-  ])
+  ], POST_PATH)
 
   return {
     props: { allPosts },
