@@ -79,7 +79,7 @@ export default function Index({ allPosts }: Props) {
               <h3 className="mb-0">Nextjs 建站过程</h3>
               <div className="mb-1 text-muted">Nov 11, 2022</div>
               <p className="card-text mb-auto">对于此网站的建站过程的介绍，这其中包涵着许多问题，在这里进行总结，以供参考和借鉴，也是一种个人笔记</p>
-              <a href="#" className="stretched-link">Continue reading</a>
+              <a href="/features/11.10#" className="stretched-link">Continue reading</a>
             </div>
             <div className="col-auto d-none d-lg-block">
               <svg className="bd-placeholder-img" width="200" height="250">
