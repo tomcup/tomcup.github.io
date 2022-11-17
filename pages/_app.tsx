@@ -16,11 +16,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <header className="blog-header lh-1 py-3 mb-4 shadow-sm container-fluid position-relative">
-        <div className="alert alert-primary h3" role="alert">
-          {/* 公告栏 */}
+        {/* <div className="alert alert-primary h3" role="alert">
+          公告栏
           <span className="badge bg-warning text-dark">注意</span>
           <strong>网站建设中：</strong> 网站内容可能随时变化
-        </div>
+        </div> */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3 lh-1">
           <span className="navbar-brand mb-0 fs-1">Tomcup</span>
           <button
