@@ -3,11 +3,9 @@ title: '悦读的享受'
 excerpt: '“读书是在别人思想的帮助下建立自己的思想。” 我们生活在信息爆炸的时代，书籍、杂志、电视、网络......无处不在，而阅读这一传统的文化活动却越 来越被人们所忽视了……'
 coverImage: '/assets/blog/hello-world/cover.jpg'
 date: '2022-11-17T18:16:44.322Z'
-author:
-  name: Tim Neutkens
-  picture: '/assets/blog/authors/tim.jpeg'
 ogImage:
-  url: '/cover.jpg'
+  url: '/image/defaultcover.jpg'
+  desc: "法第三季度手机关机估计到家"
 ---
 
 &ensp;&ensp; “读书是在别人思想的帮助下建立自己的思想。” 我们生活在信息爆炸的时代，书籍、杂志、电视、网络......无处不在，而阅读这一传统的文化活动却越 来越被人们所忽视了。阅读不仅是一个丰富人们内心世界的重要途径，更是一项培养人们审美情趣、 思考能力、创造能力的重要手段。  

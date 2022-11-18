@@ -35,7 +35,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="navbar-nav">
+            <div className="navbar-nav" style={{ textAlign: "center" }}>
               <a
                 className="nav-link align-middle fs-4 active"
                 aria-current="page"

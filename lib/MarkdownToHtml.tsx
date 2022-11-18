@@ -1,7 +1,45 @@
-import { remark } from 'remark'
-import html from 'remark-html'
+// 封存，请勿改动
 
-export default async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown)
-  return result.toString()
+import { remark } from "remark";
+import html from "remark-html";
+import remarkGfm from "remark-gfm";
+import remarkToc from "remark-toc";
+import remarkParse from "remark-parse";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
+// import rehypeHighlight from "rehype-highlight";  暂不使用
+// import javascript from 'highlight.js/lib/languages/javascript'
+
+import remarkRehype from "remark-rehype";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeStringify from "rehype-stringify";
+// rehypeDocument 不需要的，将一个 HTML 片段变为整个 HTML 页面
+// rehypeFormat 不需要的，将不规范的HTML代码格式化
+
+export async function markdownToHtml(markdown: string) {
+  const result = await remark()
+    .data("settings", { fragment: true })
+    // Remark 部分，该部分是安全的
+    .use(html)
+    .use(remarkParse)
+    .use(remarkGfm) // 加强 Remark
+    .use(remarkToc, { heading: "目录" })
+    // Rehype 部分，以下部分是不安全的
+    .use(remarkRehype, { allowDangerousHtml: true }) // 允许在 Markdown 中使用 Html
+    .use(rehypeSlug) // 在各级标题上添加 id 属性
+    .use(rehypeAutolinkHeadings) // 在各级标题上添加链接锚点
+    .use(remarkMath) // 支持数学公式
+    .use(rehypeKatex) // 用HTML呈现数学公式
+    // .use(rehypeHighlight, {languages: {javascript}})
+    .use(rehypeStringify, { allowDangerousHtml: true }) // 必要的，
+    // 以上部分是不安全的
+
+    .process(markdown);
+
+  // console.log(result);
+  console.warn("Warning: Allowed using Html in Markdown (/lib/MarkdownTownToHtml.tsx: 42");
+
+  return result.toString();
 }
