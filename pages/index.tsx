@@ -167,7 +167,8 @@ export default function Index({ allPosts }: Props) {
                 <a
                   href="/features/useBootstrapInNextjs#"
                   className="stretched-link"
-                >
+                ></a>
+                <a href="/features/11.10#" className="stretched-link">
                   Continue reading
                 </a>
               </div>
