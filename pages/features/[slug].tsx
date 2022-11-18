@@ -6,8 +6,6 @@ import { getPostBySlug, getAllPosts, PostType, getFeatureList } from "../../lib/
 import { markdownToHtml } from "../../lib/MarkdownToHtml";
 import { FEATURES_PATH } from "../../lib/constants";
 import Link from "next/link";
-import { features } from "process";
-import { StaticImageData } from "next/image";
 
 type Props = {
   post: PostType;
