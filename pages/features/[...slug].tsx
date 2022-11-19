@@ -68,7 +68,9 @@ export default function Post({ post, feature }: Props) {
                     <h4 className="fst-italic">Elsewhere</h4>
                     <ol className="list-unstyled">
                       <li>
-                        <a href="github.com/tomcup">GitHub</a>
+                        <a href="https://github.com/tomcup/github.com/tomcup">
+                          GitHub
+                        </a>
                       </li>
                     </ol>
                   </div>
