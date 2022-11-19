@@ -39,7 +39,9 @@ export async function markdownToHtml(markdown: string) {
     .process(markdown);
 
   // console.log(result);
-  console.warn("Warning: Allowed using Html in Markdown (/lib/MarkdownTownToHtml.tsx: 42");
+  console.warn(
+    "Warning /lib/MarkdownToHtml.tsx, function markdownToHtml:\nAllowed using Html in Markdown"
+  );
 
   return result.toString();
 }

@@ -164,11 +164,7 @@ export default function Index({ allPosts }: Props) {
                 <p className="card-text mb-auto">
                   对于此网站的建站过程的介绍，这其中包涵着许多问题，在这里进行总结，以供参考和借鉴，也是一种个人笔记
                 </p>
-                <a
-                  href="/features/useBootstrapInNextjs#"
-                  className="stretched-link"
-                ></a>
-                <a href="/features/11.10#" className="stretched-link">
+                <a href="/features/website/11.10#" className="stretched-link">
                   Continue reading
                 </a>
               </div>
