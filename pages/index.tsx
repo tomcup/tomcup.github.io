@@ -198,13 +198,13 @@ export default function Index({ allPosts }: Props) {
                 <strong className="d-inline-block mb-2 text-success">
                   Design
                 </strong>
-                <h3 className="mb-0">Post title</h3>
-                <div className="mb-1 text-muted">Nov 11</div>
+                <h3 className="mb-0">Document</h3>
+                <div className="mb-1 text-muted">Nov 20, 2022</div>
                 <p className="mb-auto">
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
-                <a href="#" className="stretched-link">
+                <a href="/features/document/Home" className="stretched-link">
                   Continue reading
                 </a>
               </div>

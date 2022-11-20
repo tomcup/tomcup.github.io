@@ -112,8 +112,6 @@ export async function getStaticProps({ params }: Params) {
     name: params.slug[0],
   };
 
-  console.log(feature);
-
   return {
     props: {
       post: {
