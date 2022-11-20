@@ -3,16 +3,22 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { useEffect } from "react";
 
-import { getPostBySlug, PostType, getPostSlugs } from "../../lib/api";
+import {
+  getPostBySlug,
+  PostType,
+  getPostSlugs,
+  getAllPosts,
+} from "../../lib/api";
 import { markdownToHtml } from "../../lib/MarkdownToHtml";
 import { FEATURES_PATH } from "../../lib/constants";
 import Link from "next/link";
 import { join } from "path";
+import { parseArgs } from "util";
 
 type Props = {
   post: PostType;
   morePosts: PostType[];
-  feature: { list: string[]; name: string };
+  feature: { list: PostType[]; name: string };
   preview?: boolean;
 };
 
@@ -59,8 +65,10 @@ export default function Post({ post, feature }: Props) {
                   <div className="p-4">
                     <h4 className="fst-italic">Archives</h4>
                     {/* todo: feature articel list */}
-                    {feature.list.map((vaule: string) => (
-                      <p>{vaule}</p>
+                    {feature.list.map((vaule: PostType) => (
+                      <Link href={feature.name + "/" + vaule.slug}>
+                        {vaule.title}
+                      </Link>
                     ))}
                   </div>
 
@@ -68,9 +76,7 @@ export default function Post({ post, feature }: Props) {
                     <h4 className="fst-italic">Elsewhere</h4>
                     <ol className="list-unstyled">
                       <li>
-                        <a href="https://github.com/tomcup/">
-                          GitHub
-                        </a>
+                        <a href="https://github.com/tomcup/">GitHub</a>
                       </li>
                     </ol>
                   </div>
@@ -102,11 +108,7 @@ export async function getStaticProps({ params }: Params) {
   );
   const content = await markdownToHtml(post.content.toString() || "");
   const feature = {
-    list: getPostSlugs(join(FEATURES_PATH, params.slug[0])).map(
-      (value: string) => {
-        return value.replace(/\.md$/, "");
-      }
-    ),
+    list: getAllPosts(["title", "slug"], join(FEATURES_PATH, params.slug[0])),
     name: params.slug[0],
   };
 

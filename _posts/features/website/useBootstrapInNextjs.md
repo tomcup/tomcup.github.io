@@ -1,7 +1,7 @@
 ---
 title: "如何在 Next.js 中正确地使用 Bootstrap?"
 ---
-## Table of Content
+## 目录
 # 问题
 安装 bootstrap 后，npm install bootstrap 添加了样式，/pages/_app.js 写入如下内容：
 ```
