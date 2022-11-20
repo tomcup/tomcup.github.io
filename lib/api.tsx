@@ -61,7 +61,7 @@ export function getPostBySlug(
     date: "2022-01-01T00:00:00.000Z",
     author: {
       name: "Tomcup",
-      url: "github.com/tomcup",
+      url: "https://github.com/tomcup",
     },
     ogImage: {
       url: "/image/defaultcover.jpg",
