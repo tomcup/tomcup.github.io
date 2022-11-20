@@ -76,7 +76,7 @@ export default function Post({ post, feature }: Props) {
                     <table className="table table-dark table-hover">
                       <tbody>
                         {feature.list.map((vaule: PostType, index: number) => (
-                          <tr className="position-relative">
+                          <tr className="position-relative" key={index}>
                             <th>{index + 1}</th>
                             <td>
                               <Link
