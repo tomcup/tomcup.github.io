@@ -1,20 +1,18 @@
-// 封存，请勿改动
-
 import { remark } from "remark";
-import html from "remark-html";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 import remarkParse from "remark-parse";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
-// import rehypeHighlight from "rehype-highlight";  暂不使用
-// import javascript from 'highlight.js/lib/languages/javascript'
-
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeStringify from "rehype-stringify";
+import rehypeHighlight from "rehype-highlight";
+
+import powershell from "highlight.js/lib/languages/powershell";
+import typescript from "highlight.js/lib/languages/typescript"
 // rehypeDocument 不需要的，将一个 HTML 片段变为整个 HTML 页面
 // rehypeFormat 不需要的，将不规范的HTML代码格式化
 
@@ -22,7 +20,6 @@ export async function markdownToHtml(markdown: string) {
   const result = await remark()
     .data("settings", { fragment: true })
     // Remark 部分，该部分是安全的
-    .use(html)
     .use(remarkParse)
     .use(remarkGfm) // 加强 Remark
     .use(remarkToc, { heading: "目录" })
@@ -32,10 +29,12 @@ export async function markdownToHtml(markdown: string) {
     .use(rehypeAutolinkHeadings) // 在各级标题上添加链接锚点
     .use(remarkMath) // 支持数学公式
     .use(rehypeKatex) // 用HTML呈现数学公式
-    // .use(rehypeHighlight, {languages: {javascript}})
+    .use(rehypeHighlight, {
+      ignoreMissing: true,
+      languages: { powershell, typescript },
+    })
     .use(rehypeStringify, { allowDangerousHtml: true }) // 必要的，
     // 以上部分是不安全的
-
     .process(markdown);
 
   // console.log(result);

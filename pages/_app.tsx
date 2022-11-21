@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import { AppProps } from "next/app";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles.css";
+// import "highlight.js/styles/tokyo-night-dark.css";   it's purple
+// import "highlight.js/styles/panda-syntax-dark.css";  github dimmed is better
+// import "highlight.js/styles/github-dark-dimmed.css"; atom is better
+import "highlight.js/styles/atom-one-dark.css";       // best
+
 import React from "react";
 import Head from "next/head";
 

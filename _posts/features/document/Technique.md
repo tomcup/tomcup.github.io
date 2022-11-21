@@ -7,7 +7,7 @@ excerpt: "这里只是分析代码里的运行技术，并不介绍怎么用它�
 ## 1. getPostSlugs - 函數
 代码很好理解。
 
-```
+```typescript
 export function getPostSlugs(dir: string, realSlug: boolean = false) {
   let result: string[] = [];
   if (realSlug) {
@@ -33,7 +33,7 @@ export function getPostSlugs(dir: string, realSlug: boolean = false) {
 
 至于为何要为了设定是否去除后缀而重复这许多代码，这是因为如果减少重复后代码变成这样（之前版本的源代码）：
 
-```
+```typescript
 fs.readdirSync(join(process.cwd(), dir), {
     encoding: "utf-8",
     withFileTypes: true,

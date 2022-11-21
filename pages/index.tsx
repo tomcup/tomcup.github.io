@@ -215,11 +215,11 @@ export default function Index({ allPosts }: Props) {
         {/* Article List */}
         <h3 className="pb-4 mb-4 fst-italic border-bottom">Article List</h3>
         <div className="row mb-2">
-          {allPosts.map((post) => (
+          {allPosts.map((post: PostType, index: number) => (
             // div 标签中的 key 是必要的，否则React会报警告，好像这里的map布局使用了<li>标签
             <div
               className="row g-0 rounded overflow-hidden mb-2 shadow-sm position-relative"
-              key={post.title}
+              key={index}
             >
               {/* div 标签中 className 属性中的 position-relative 是必要的，为子标签提供父级环境 */}
               <div className="col-4 d-none d-lg-block position-relative">

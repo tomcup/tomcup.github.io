@@ -4,7 +4,7 @@ title: "如何在 Next.js 中正确地使用 Bootstrap?"
 ## 目录
 # 问题
 安装 bootstrap 后，npm install bootstrap 添加了样式，/pages/_app.js 写入如下内容：
-```
+```typescript
 import 'bootstrap';
 ```
 运行时（渲染时而非编译时）报错：
@@ -21,7 +21,7 @@ Bootstrap 的 JavaScript 文件中需要 document 的函数在编译时——渲
 
 # 解决办法
 在 /pages/_app.js 中的主函数内添加：
-```
+```typescript
 useEffect(() => {
     require("bootstrap/dist/js/bootstrap");
   }, []);
