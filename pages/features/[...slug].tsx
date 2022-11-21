@@ -31,7 +31,7 @@ export default function Post({ post, feature }: Props) {
   }, []);
   return (
     <>
-      <main className="container">
+      <main>
         {router.isFallback ? (
           <>
             <h1>Loading...</h1>

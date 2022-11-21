@@ -50,10 +50,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </nav>
       </header>
-      <Component sytle="position: static;" {...pageProps} />
+      <div className="container">
+        <Component sytle="position: static;" {...pageProps} />
+      </div>
       <div className="container">
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p className="col-md-4 mb-0 text-muted">© 2022 Topcup</p>
+          <p className="col-md-4 mb-0 text-muted">© 2022 Tomcup</p>
 
           <ul className="nav col-md-4 justify-content-end">
             <li className="nav-item">
@@ -62,12 +64,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted">
+              <a href="#" className="nav-link px-2 text-muted disabled">
                 Features
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted">
+              <a href="/about" className="nav-link px-2 text-muted">
                 About
               </a>
             </li>
