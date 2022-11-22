@@ -1,6 +1,5 @@
 ---
-title: ""
-excerpt: ""
+excerpt: "在git倉庫中，有一個 .gitignore 文件，這是用來屏蔽某些不需要跟蹤的文件，其中的內容有归递效果，可以在文件（夾）名前加上 / 消除"
 coverImage: "/image/defaultcover.jpg"
 date: "2022-11-22T08:04:00.007+08:00"
 ogImage:
