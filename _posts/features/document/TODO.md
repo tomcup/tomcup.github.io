@@ -1,5 +1,6 @@
 # 已知問題
 1. 問題：当存在`/_posts/features/[专题名]/`中不含 Markdown 文件时，专题页面中的 getStaticPaths 可能出现
+2. 新建文章時總是報錯 ogImage 未定義，原因未知
 
 # 近期計劃
 * [ ] 思考：`/lib/api.tsx` 中 getPostBySlug 函数中`if (typeof data[field] !== "undefined") { items[field] = data[field]; }`为什么这样写，這段代碼继承自源示例项目
@@ -9,10 +10,10 @@
 # Rode Map
 ## 基础
 * [ ] ~~xx使用 appDir 构建应用程序 放弃：appDir 是服务器友好的 Beta 版本，不适合静态博客且功能、文档不完整~~
-* [ ] 使用 Bootstarp 美化界面
+* [x] 使用 Bootstarp 美化界面
 * [x] 使用 fs 自动搜索并构建 文章界面
 * [x] 使用 fs 支持 Feature 页面
-* [ ] 在 Github Wiki 中編寫 技術文檔 - 正在建設
+* [ ] ~~在 Github Wiki 中編寫 技術文檔 - 正在建設~~
 * [ ] 使用 Github Action 构建部署，加入**更新日期**
 
 ## 进阶
@@ -28,4 +29,5 @@
 ## 高级
 * [ ] 使用 Github Action 自动**_更新_** Algolia 数据
 * [ ] 支持 亮/暗 模式切換
+* [ ] 解決 Obsidian 編寫文章時需手動移動附件：可以使用 Github Action 或 Obsidian 插件
 * [ ] 探索 Github
