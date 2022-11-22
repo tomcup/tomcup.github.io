@@ -18,10 +18,11 @@
 
 ## 进阶
 * [ ] 利用爬虫（github.com/tomcup）构建作者界面
-* [ ] 提高 API 速度
+* [ ] **提高 API 速度**
+* [ ] 新建 檔案 頁面（倉庫），即在專題頁面的基礎上加入子文件夾界面。-> 將[此倉庫](https://github.com/Drawoceans/vulkan_tutorial_zhcn)的內容放入 檔案 頁面進行測試
 * [ ] 在網站中加入 RSS 訂閱功能 - 使用 [node-xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 * [ ] 支持 繁/簡 字體切換
-* [ ] 加强文章界面，加入 Code Highlight
+* [x] 加强文章界面，加入 Code Highlight
 * [ ] 使用 Github Action 构建 Privite 仓库（Site）中的源代码提交至 Public 仓库 （tomcup.github.io）
 * [ ] 使用 Algolia 进行文章搜索
 * [ ] 使用 Supabase 进行网站数据统计
