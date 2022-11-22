@@ -6,6 +6,7 @@ import { getPostBySlug, getAllPosts, PostType } from "../../lib/api";
 import { markdownToHtml } from "../../lib/MarkdownToHtml";
 import { POST_PATH } from "../../lib/constants";
 
+
 type Props = {
   post: PostType;
   morePosts: PostType[];
@@ -35,7 +36,10 @@ export default function Post({ post }: Props) {
                 {post.date.replace(/T/, " ").replace(/\..+/, "")} by{" "}
                 {post.author.name}
               </p>
-              <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+              <div
+                dangerouslySetInnerHTML={{ __html: post.content }}
+                className="w-100"
+              ></div>
             </article>
           </>
         )}

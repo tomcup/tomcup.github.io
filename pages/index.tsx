@@ -52,18 +52,22 @@ export default function Index({ allPosts }: Props) {
                 preserveAspectRatio="xMidYMid slice"
                 focusable="false"
               >
-                <rect width="100%" height="100%" fill="#777"></rect>
+                <rect width="100%" height="100%" fill="#a41e22"></rect>
               </svg>
               <div className="container">
                 <div className="carousel-caption text-start">
-                  <h1>Example headline.</h1>
+                  <h1>Vulkan Tutorial - Ebook</h1>
                   <p>
-                    Some representative placeholder content for the first slide
-                    of the carousel.
+                    This tutorial will teach you the basics of using the Vulkan
+                    graphics and compute API
                   </p>
                   <p>
-                    <a className="btn btn-lg btn-primary" href="#">
-                      Sign up today
+                    <a
+                      className="btn btn-lg btn-primary"
+                      download={"Vulkan Tutorial - Ebook"}
+                      href="/Vulkan Tutorial en.pdf"
+                    >
+                      Download Now!
                     </a>
                   </p>
                 </div>

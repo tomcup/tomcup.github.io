@@ -39,5 +39,5 @@ next-env.d.ts
 /.vscode
 
 # Obsidian
-/_posts/.obsidian
+/.obsidian
 /_posts/_internalUse

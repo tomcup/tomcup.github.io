@@ -10,6 +10,8 @@ import "highlight.js/styles/atom-one-dark.css";       // best
 import React from "react";
 import Head from "next/head";
 
+import "./style.css";
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap");
