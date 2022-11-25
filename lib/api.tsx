@@ -2,6 +2,8 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
+import { log } from "./debug";
+
 // 建议在动态页面(文件名形似\[slug] 或 \[...slug])中的开头部分定义一 dir 常数，以保证该页面所调用的api函数所传入的 dir 值相同
 
 /**
@@ -81,7 +83,7 @@ export function getPostBySlug(
       items[field] = data[field];
     }
   });
-  console.log("Message: /lib/api.tsx, function getPostBySlug:\n思考該函數中最後一個 if 是如何運作的");
+  log("Message: /lib/api.tsx, function getPostBySlug:\n思考該函數中最後一個 if 是如何運作的");
   return items;
 }
 

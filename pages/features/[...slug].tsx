@@ -77,16 +77,33 @@ export default function Post({ post, feature }: Props) {
                       <tbody>
                         {feature.list.map((vaule: PostType, index: number) => (
                           <tr className="position-relative" key={index}>
-                            <th>{index + 1}</th>
-                            <td>
-                              <Link
-                                href={feature.name + "/" + vaule.slug}
-                                className="stretched-link text-light"
-                                style={{ textDecoration: "none" }}
-                              >
-                                {vaule.title}
-                              </Link>
-                            </td>
+                            {vaule.slug == post.slug ? (
+                              <>
+                                <th className="bg-primary">{index + 1}</th>
+                                <td className="bg-primary">
+                                  <Link
+                                    href={feature.name + "/" + vaule.slug}  // 注意：不能使用 join(), 该函数使用的是 反斜杠 \，会报警告
+                                    className="stretched-link text-light"
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    {vaule.title}
+                                  </Link>
+                                </td>
+                              </>
+                            ) : (
+                              <>
+                                <th>{index + 1}</th>
+                                <td>
+                                  <Link
+                                    href={feature.name + "/" + vaule.slug}
+                                    className="stretched-link text-light"
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    {vaule.title}
+                                  </Link>
+                                </td>
+                              </>
+                            )}
                           </tr>
                         ))}
                       </tbody>

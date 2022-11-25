@@ -16,6 +16,8 @@ import typescript from "highlight.js/lib/languages/typescript"
 // rehypeDocument 不需要的，将一个 HTML 片段变为整个 HTML 页面
 // rehypeFormat 不需要的，将不规范的HTML代码格式化
 
+import {log} from './debug'
+
 export async function markdownToHtml(markdown: string) {
   const result = await remark()
     .data("settings", { fragment: true })
@@ -38,8 +40,8 @@ export async function markdownToHtml(markdown: string) {
     .process(markdown);
 
   // console.log(result);
-  console.warn(
-    "Warning /lib/MarkdownToHtml.tsx, function markdownToHtml:\nAllowed using Html in Markdown"
+  log(
+    "Warning in /lib/MarkdownToHtml.tsx, function markdownToHtml:\nAllowed using Html in Markdown"
   );
 
   return result.toString();
