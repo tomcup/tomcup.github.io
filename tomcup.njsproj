@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f2ad61ff-a1e5-4b91-bd04-d5019863d34b}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ProjectFiles</ProjectView>
+    <StartupFile>next-env.d.ts</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>True</StartWebBrowser>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".lintstagedrc.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include=".prettierignore">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="t.txt" />
+    <Content Include="styles.css" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <None Include="tsconfig.json" />
+    <Content Include="README.md" />
+    <None Include="next-env.d.ts" />
+    <None Include="lib\api.tsx" />
+    <None Include="lib\constants.tsx" />
+    <None Include="lib\debug.tsx" />
+    <None Include="lib\MarkdownToHtml.tsx" />
+    <Content Include="out\404.html" />
+    <Content Include="out\index.html" />
+    <Content Include="out\gooddog.png" />
+    <Content Include="out\people.jpg" />
+    <Content Include="pages\style.css" />
+    <None Include="pages\about.tsx" />
+    <None Include="pages\index.tsx" />
+    <None Include="pages\_app.tsx" />
+    <None Include="pages\_document.tsx" />
+    <Content Include="public\gooddog.png" />
+    <Content Include="public\people.jpg" />
+    <Content Include="_posts\DOP.md" />
+    <Content Include="_posts\enjoyReading.md" />
+    <Content Include="_posts\Git 中 .gitignore 文件作用.md" />
+    <Content Include="_posts\Git.md" />
+    <Content Include="_posts\hello-world.md" />
+    <Content Include="_posts\Rode Map.md" />
+    <Content Include="out\image\defaultcover.jpg" />
+    <Content Include="out\posts\enjoyReading.html" />
+    <Content Include="out\posts\hello-world.html" />
+    <Content Include="out\posts\Rode Map.html" />
+    <Content Include="out\features\website\11.10.html" />
+    <Content Include="out\features\website\useBootstrapInNextjs.html" />
+    <Content Include="out\features\website\测试使用.html" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\index.json" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\posts\enjoyReading.json" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\posts\hello-world.json" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\posts\Rode Map.json" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\features\website\11.10.json" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\features\website\useBootstrapInNextjs.json" />
+    <Content Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\features\website\测试使用.json" />
+    <Content Include="out\_next\static\css\e1dca31a33fee9d7.css" />
+    <None Include="pages\features\[...slug].tsx" />
+    <None Include="pages\posts\[slug].tsx" />
+    <Content Include="public\image\black hole.jpg" />
+    <Content Include="public\image\defaultcover.jpg" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161416.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161444.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161511.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161520.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161532.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161543.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161604.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161613.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161628.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161636.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161649.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161657.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161707.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161819.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122161952.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162004.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162017.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162034.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162049.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162108.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162129.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162142.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162151.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162201.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162211.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162223.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162230.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162240.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162254.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162259.png" />
+    <Content Include="public\image\post_dop\Pasted image 20221122162313.png" />
+    <Content Include="_posts\_internalUse\Template.md" />
+    <Content Include="_posts\features\document\Home.md" />
+    <Content Include="_posts\features\document\Manual.md" />
+    <Content Include="_posts\features\document\Technique.md" />
+    <Content Include="_posts\features\document\TODO.md" />
+    <Content Include="_posts\features\website\11.10.md" />
+    <Content Include="_posts\features\website\useBootstrapInNextjs.md" />
+    <Content Include="_posts\features\website\测试使用.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_posts" />
+    <Folder Include="_posts\_internalUse" />
+    <Folder Include="_posts\features" />
+    <Folder Include="_posts\features\document" />
+    <Folder Include="_posts\features\website" />
+    <Folder Include="_posts\vulkan" />
+    <Folder Include="lib" />
+    <Folder Include="out" />
+    <Folder Include="out\_next" />
+    <Folder Include="out\_next\data" />
+    <Folder Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT" />
+    <Folder Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\features" />
+    <Folder Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\features\website" />
+    <Folder Include="out\_next\data\spOwOf-oQ5fHIKcx3PIpT\posts" />
+    <Folder Include="out\_next\spOwOf-oQ5fHIKcx3PIpT" />
+    <Folder Include="out\_next\static" />
+    <Folder Include="out\_next\static\chunks" />
+    <Folder Include="out\_next\static\chunks\pages" />
+    <Folder Include="out\_next\static\chunks\pages\features" />
+    <Folder Include="out\_next\static\chunks\pages\posts" />
+    <Folder Include="out\_next\static\css" />
+    <Folder Include="out\_next\static\spOwOf-oQ5fHIKcx3PIpT" />
+    <Folder Include="out\features" />
+    <Folder Include="out\features\website" />
+    <Folder Include="out\image" />
+    <Folder Include="out\music" />
+    <Folder Include="out\music\apps" />
+    <Folder Include="out\posts" />
+    <Folder Include="pages" />
+    <Folder Include="pages\features" />
+    <Folder Include="pages\posts" />
+    <Folder Include="public" />
+    <Folder Include="public\image" />
+    <Folder Include="public\image\post_dop" />
+    <Folder Include="public\music" />
+    <Folder Include="public\music\apps" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

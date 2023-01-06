@@ -1,6 +1,7 @@
 import fs from "fs";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
+import Head from "next/head";
 import { useEffect } from "react";
 
 import {
@@ -26,11 +27,12 @@ export default function Post({ post, feature }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-  useEffect(() => {
-    document.title = post.title + " | Tomcup Blog";
-  }, []);
   return (
-    <>
+      <>
+          <Head>
+              <title>{post.title + " | Tomcup Blog"}</title>
+              <meta property="og:title" content="Tomcup title" key="title" />
+          </Head>
       <main>
         {router.isFallback ? (
           <>
@@ -82,7 +84,7 @@ export default function Post({ post, feature }: Props) {
                                 <th className="bg-primary">{index + 1}</th>
                                 <td className="bg-primary">
                                   <Link
-                                    href={feature.name + "/" + vaule.slug}  // 注意：不能使用 join(), 该函数使用的是 反斜杠 \，会报警告
+                                    href={feature.name + "/" + vaule.slug} // 注意：不能使用 join(), 该函数使用的是 反斜杠 \，会报警告
                                     className="stretched-link text-light"
                                     style={{ textDecoration: "none" }}
                                   >

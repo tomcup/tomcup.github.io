@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { AppProps } from "next/app";
+import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles.css";
-// import "highlight.js/styles/tokyo-night-dark.css";   it's purple
-// import "highlight.js/styles/panda-syntax-dark.css";  github dimmed is better
-// import "highlight.js/styles/github-dark-dimmed.css"; atom is better
-import "highlight.js/styles/atom-one-dark.css";       // best
+import "highlight.js/styles/atom-one-dark.css";
 
 import React from "react";
 import Head from "next/head";
@@ -43,16 +41,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="navbar-nav" style={{ textAlign: "center" }}>
-              <a
+              <Link
                 className="nav-link align-middle fs-4 active"
                 aria-current="page"
                 href="/"
               >
                 Home
-              </a>
-              <a className="nav-link align-middle fs-4" href="/about">
+              </Link>
+              <Link className="nav-link align-middle fs-4" href="/about">
                 About
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
@@ -66,19 +64,19 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
           <ul className="nav col-md-4 justify-content-end">
             <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted">
+              <Link href="#" className="nav-link px-2 text-muted">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted disabled">
+              <Link href="#" className="nav-link px-2 text-muted disabled">
                 Features
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="/about" className="nav-link px-2 text-muted">
+              <Link href="/about" className="nav-link px-2 text-muted">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </footer>

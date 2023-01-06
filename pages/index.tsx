@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, PostType } from "../lib/api";
 import { POST_PATH } from "../lib/constants";
 
@@ -62,13 +63,13 @@ export default function Index({ allPosts }: Props) {
                     graphics and compute API
                   </p>
                   <p>
-                    <a
+                    <Link
                       className="btn btn-lg btn-primary"
                       download={"Vulkan Tutorial - Ebook"}
                       href="/Vulkan Tutorial en.pdf"
                     >
                       Download Now!
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -93,9 +94,9 @@ export default function Index({ allPosts }: Props) {
                     of the carousel.
                   </p>
                   <p>
-                    <a className="btn btn-lg btn-primary" href="#">
+                    <Link className="btn btn-lg btn-primary" href="#">
                       Learn more
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -120,9 +121,9 @@ export default function Index({ allPosts }: Props) {
                     of this carousel.
                   </p>
                   <p>
-                    <a className="btn btn-lg btn-primary" href="#">
+                    <Link className="btn btn-lg btn-primary" href="#">
                       Browse gallery
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -168,9 +169,12 @@ export default function Index({ allPosts }: Props) {
                 <p className="card-text mb-auto">
                   对于此网站的建站过程的介绍，这其中包涵着许多问题，在这里进行总结，以供参考和借鉴，也是一种个人笔记
                 </p>
-                <a href="/features/website/11.10#" className="stretched-link">
+                <Link
+                  href="/features/website/11.10#"
+                  className="stretched-link"
+                >
                   Continue reading
-                </a>
+                </Link>
               </div>
               <div className="col-auto d-none d-lg-block">
                 <svg className="bd-placeholder-img" width="200" height="250">
@@ -208,9 +212,9 @@ export default function Index({ allPosts }: Props) {
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
-                <a href="/features/document/Home" className="stretched-link">
+                <Link href="/features/document/Home" className="stretched-link">
                   Continue reading
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -228,11 +232,13 @@ export default function Index({ allPosts }: Props) {
               {/* div 标签中 className 属性中的 position-relative 是必要的，为子标签提供父级环境 */}
               <div className="col-4 d-none d-lg-block position-relative">
                 {/* img 标签中的 style 属性是必要的，其使得该图片相对于父级居中 */}
-                <img
+                <Image
                   src={post.ogImage.url}
                   alt="ogImage"
-                  className="w-100 position-absolute top-50 start-50 translate-middle"
-                ></img>
+                  className="position-absolute top-50 start-50 translate-middle"
+                  width="400"
+                  height="256"
+                ></Image>
                 <p className="position-absolute bottom-0 start-50 translate-middle-x">
                   {post.ogImage.desc}
                 </p>

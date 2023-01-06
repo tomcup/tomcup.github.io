@@ -10,13 +10,14 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
+import rehypeDocument from "rehype-document";
 
 import powershell from "highlight.js/lib/languages/powershell";
-import typescript from "highlight.js/lib/languages/typescript"
+import typescript from "highlight.js/lib/languages/typescript";
 // rehypeDocument 不需要的，将一个 HTML 片段变为整个 HTML 页面
 // rehypeFormat 不需要的，将不规范的HTML代码格式化
 
-import {log} from './debug'
+import { log } from "./debug";
 
 export async function markdownToHtml(markdown: string) {
   const result = await remark()
@@ -35,6 +36,7 @@ export async function markdownToHtml(markdown: string) {
       ignoreMissing: true,
       languages: { powershell, typescript },
     })
+    .use(rehypeDocument)
     .use(rehypeStringify, { allowDangerousHtml: true }) // 必要的，
     // 以上部分是不安全的
     .process(markdown);

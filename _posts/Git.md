@@ -4,49 +4,66 @@ excerpt: "根据 Pro Git Book 所写的关于 git 版本管理器的使用方法
 coverImage: "/image/defaultcover.jpg"
 date: "2022-11-21T09:20:15.154+08:00"
 ogImage:
-  url: '/image/defaultcover.jpg'
+  url: "/image/defaultcover.jpg"
   desc: "法第三季度手机关机估计到家"
 ---
 
 <!-- 目录标题请假装看不见，用于内部自动生成目录时锚点使用 -->
+
 ## 目录
+
 ---
+
 ## 初次运行 Git 前的配置
+
 可以通過以下命令查看所有的配置以及它们所在的文件：
+
 ```powershell
 git config --list --show-origin
 ```
 
 ### 用户信息
+
 安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改：
+
 ```powershell
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
+
 再次强调，如果使用了 --global 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 --global 选项的命令来配置。
+
 ### 文本编辑器
+
 既然用户信息已经设置完毕，你可以配置默认文本编辑器了，当 Git 需要你输入信息时会调用它。 如果未配置，Git 会使用操作系统默认的文本编辑器。
 如果你想使用不同的文本编辑器，例如 Emacs，可以这样做：
+
 ```powershell
 git config --global core.editor emacs
 ```
+
 在 Windows 系统上，如果你想要使用别的文本编辑器，那么必须指定可执行文件的完整路径。 它可能随你的编辑器的打包方式而不同。
 对于 Notepad++，一个流行的代码编辑器来说，你可能想要使用 32 位的版本， 因为在本书编写时 64 位的版本尚不支持所有的插件。 如果你在使用 32 位的 Windows 系统，或在 64 位系统上使用 64 位的编辑器，那么你需要输入如下命令：
-```powershell
-git config --global core.editor "C:/ProgramFiles/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+````powershell
+git config --global core.editor "C:/ProgramFiles/Notepad++/notepad++.exe" -multiInst -notabbar -nosession -noPlugin"
 ```powershell
 ### 检查配置信息
 可以使用 git config --list 命令来列出所有 Git 当时能找到的配置。
 ```powershell
 git config --list
-```
+````
+
 你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：/etc/gitconfig 与 ~/.gitconfig）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。
 你可以通过输入 `git config <key>` 来检查 Git 的某一项配置
+
 ```powershell
 git config user.name
 ```
+
 查询 Git 中该变量的 原始 值:
-```powershell
+
+````powershell
 git config --show-origin rerere.autoUpdate
 > file:/home/johndoe/.gitconfig false
 ```powershell
@@ -56,12 +73,16 @@ git config --show-origin rerere.autoUpdate
 git help <verb>
 git <verb> --help
 man git-<verb>
-```
+````
+
 例如，要想获得 git config 命令的手册，执行
+
 ```powershell
 git help config
 ```
+
 此外，如果你不需要全面的手册，只需要可用选项的快速参考，那么可以用 -h 选项获得更简明的 “help” 输出：
+
 ```powershell
 git add -h
 	usage: git add [<options>] [--] <pathspec>...
@@ -78,7 +99,7 @@ git add -h
 		-A, --all add changes from all tracked and untracked files
 		--ignore-removal ignore paths removed in the working tree (same
 		as --no-all)
-		--refresh don't add, only refresh the index
+		--refresh don"t add, only refresh the index
 		--ignore-errors just skip files which cannot be added because of
 		errors
 		--ignore-missing check if - even missing - files are ignored in
@@ -87,13 +108,17 @@ git add -h
 ```
 
 ## 获取 Git 仓库
+
 ### 在文件夾中初始化仓库
+
 ```powershell
 git init
 ```
-该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是Git 仓库的骨干。 但是，在这个时候，我们仅仅是做了一个初始化的操作，你的项目里的文件还没有被跟踪。（這裡涉及的內容以後再談）
+
+该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。 但是，在这个时候，我们仅仅是做了一个初始化的操作，你的项目里的文件还没有被跟踪。（這裡涉及的內容以後再談）
 
 ### 克隆现有的仓库
+
 ```powershell
 git clone <url>
 
@@ -105,14 +130,17 @@ git clone https://github.com/libgit2/libgit2 mylibgit
 ```
 
 ## 常用命令
+
 ### 个别专用名词的译名
+
 1. Workspace：工作区
 2. Index / Stage：暂存区
 3. Repository：仓库区（或本地仓库）
 4. Remote：远程仓库
 
 ### 新建代码库
-```powershell
+
+````powershell
 # 在当前目录新建一个Git代码库
 $ git init
 
@@ -134,9 +162,10 @@ $ git config -e [--global]
 # 设置提交代码时的用户信息
 $ git config [--global] user.name "[name]"
 $ git config [--global] user.email "[email address]"
-```
+````
 
 ### 增加/删除文件
+
 ```powershell
 # 添加指定文件到暂存区
 $ git add [file1] [file2] ...
@@ -162,6 +191,7 @@ $ git mv [file-original] [file-renamed]
 ```
 
 ### 代码提交
+
 ```powershell
 # 提交暂存区到仓库区
 $ git commit -m [message]
@@ -184,6 +214,7 @@ $ git commit --amend [file1] [file2] ...
 ```
 
 ### 分支
+
 ```powershell
 # 列出所有本地分支
 $ git branch
@@ -230,6 +261,7 @@ $ git branch -dr [remote/branch]
 ```
 
 ### 标签
+
 ```powershell
 # 列出所有tag
 $ git tag
@@ -260,6 +292,7 @@ $ git checkout -b [branch] [tag]
 ```
 
 ### 查看信息
+
 ```powershell
 # 显示有变更的文件
 $ git status
@@ -324,6 +357,7 @@ $ git reflog
 ```
 
 ### 远程同步
+
 ```powershell
 # 下载远程仓库的所有变动
 $ git fetch [remote]
@@ -352,6 +386,7 @@ $ git push [remote] --all
 ```
 
 ### 撤销
+
 ```powershell
 # 恢复暂存区的指定文件到工作区
 $ git checkout [file]
@@ -387,6 +422,7 @@ $ git stash pop
 ```
 
 ### 其他
+
 ```powershell
 # 生成一个可供发布的压缩包
 $ git archive

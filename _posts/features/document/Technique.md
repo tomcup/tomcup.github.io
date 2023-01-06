@@ -2,9 +2,13 @@
 title: "技術文檔 - 總體介紹"
 excerpt: "这里只是分析代码里的运行技术，并不介绍怎么用它们。\n如果要使用的这些脚本，请參閱 使用文檔 或 文件注釋。"
 ---
+
 # api.tsx
-这个文件是在模板项目中继承而来的。经过几次大型的改动后，可能其中的函数名已经不太契合其中的内容。由于这些名字已经大量使用看习惯了，不想改。  
+
+这个文件是在模板项目中继承而来的。经过几次大型的改动后，可能其中的函数名已经不太契合其中的内容。由于这些名字已经大量使用看习惯了，不想改。
+
 ## 1. getPostSlugs - 函數
+
 代码很好理解。
 
 ```typescript
@@ -35,12 +39,12 @@ export function getPostSlugs(dir: string, realSlug: boolean = false) {
 
 ```typescript
 fs.readdirSync(join(process.cwd(), dir), {
-    encoding: "utf-8",
-    withFileTypes: true,
+  encoding: "utf-8",
+  withFileTypes: true,
 }).forEach((vaule: fs.Dirent) => {
-    if (vaule.isFile() && /\.md$/.test(vaule.name))
-        if (realSlug)   result.push(vaule.name.replace(/\.md$/, ""));
-        else    result.push(vaule.name);
+  if (vaule.isFile() && /\.md$/.test(vaule.name))
+    if (realSlug) result.push(vaule.name.replace(/\.md$/, ""));
+    else result.push(vaule.name);
 });
 ```
 

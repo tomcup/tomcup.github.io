@@ -1,0 +1,3 @@
+D:\Project\tomcup.github.io\obj\Debug\tomcup.njsproj.AssemblyReference.cache
+D:\Project\tomcup.github.io\obj\Debug\tomcup.njsproj.CoreCompileInputs.cache
+D:\Project\tomcup.github.io\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,6 +1,6 @@
 .svg-center {
-    text-anchor: middle;
-    dominant-baseline: middle;
+  text-anchor: middle;
+  dominant-baseline: middle;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -31,7 +31,8 @@
 }
 
 .blog-header-logo {
-  font: "Playfair Display", Georgia/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font: "Playfair Display",
+    Georgia /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2.25rem;
 }
 
@@ -39,8 +40,14 @@
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font: "Playfair Display", Georgia/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: "Playfair Display",
+    Georgia /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
 }
 
 .display-4 {
@@ -56,9 +63,13 @@ h1, h2, h3, h4, h5, h6 {
   flex: 0 0 auto;
 }
 
-.h-250 { height: 250px; }
+.h-250 {
+  height: 250px;
+}
 @media (min-width: 768px) {
-  .h-md-250 { height: 250px; }
+  .h-md-250 {
+    height: 250px;
+  }
 }
 
 /* Pagination */
@@ -88,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #727272;
   text-align: center;
   background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
+  border-top: 0.05rem solid #e5e5e5;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;

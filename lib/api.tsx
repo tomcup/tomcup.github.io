@@ -83,7 +83,9 @@ export function getPostBySlug(
       items[field] = data[field];
     }
   });
-  log("Message: /lib/api.tsx, function getPostBySlug:\n思考該函數中最後一個 if 是如何運作的");
+  log(
+    "Message: /lib/api.tsx, function getPostBySlug:\n思考該函數中最後一個 if 是如何運作的"
+  );
   return items;
 }
 

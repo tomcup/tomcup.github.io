@@ -41,3 +41,22 @@ next-env.d.ts
 # Obsidian
 /.obsidian
 /_posts/_internalUse
+
+# Visual Studio
+/.vs
+tomcup.sln
+tomcup.njsproj.user
+tomcup.njsproj
+
+# ESLint
+.eslintrc.json
+
+# lint-staged
+.lintstagedrc.js
+
+# husky
+/.husky
+
+# Prettier
+.prettierignore
+.prettierrc.json

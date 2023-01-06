@@ -1,7 +1,7 @@
 # Tomcup Blog 简介
 
-***注意：以下內容正在遷移至 文章專題***  
-***詳見 [文章專題](https://tomcup.github.io/features/document/Home)***
+**_注意：以下內容正在遷移至 文章專題_**  
+**_詳見 [文章專題](https://tomcup.github.io/features/document/Home)_**
 
 个人静态博客  
 参考自 Vercel Nextjs 的 [Blog Starter using markdown files](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) 实例项目改造  
