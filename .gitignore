@@ -47,6 +47,8 @@ next-env.d.ts
 tomcup.sln
 tomcup.njsproj.user
 tomcup.njsproj
+/bin
+/obj
 
 # ESLint
 .eslintrc.json

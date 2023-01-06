@@ -28,11 +28,11 @@ export default function Post({ post, feature }: Props) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-      <>
-          <Head>
-              <title>{post.title + " | Tomcup Blog"}</title>
-              <meta property="og:title" content="Tomcup title" key="title" />
-          </Head>
+    <>
+      <Head>
+        <title>{post.title + " | Tomcup Blog"}</title>
+        <meta property="og:title" content="Tomcup title" key="title" />
+      </Head>
       <main>
         {router.isFallback ? (
           <>
