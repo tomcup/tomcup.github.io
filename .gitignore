@@ -62,3 +62,6 @@ tomcup.njsproj
 # Prettier
 .prettierignore
 .prettierrc.json
+
+# Others
+t.txt
